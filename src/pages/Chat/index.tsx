@@ -1,6 +1,6 @@
 import { Content } from "@components/Content";
 import { SubContent } from "@components/SubContent";
-import { FC, useCallback, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { AivaLogo } from "@components/AivaLogo";
 import {
   cn,

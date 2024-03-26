@@ -4,10 +4,8 @@ import { SubContent } from "./SubContent";
 import { Divider } from "./Divider";
 import { Switch } from "./Switch";
 import { Empty } from "./Empty";
-import { Avatar } from "./Avatar";
 import { Label, LabelTitle } from "./Label";
 import { PopoverItem } from "./PopoverItem";
-import { Click } from "./Click";
 import { Card } from "./Card";
 import { Button } from "./Button";
 import { Input } from "./Input";
@@ -23,11 +21,9 @@ export {
   Divider,
   Switch,
   Empty,
-  Avatar,
   Label,
   LabelTitle,
   PopoverItem,
-  Click,
   Card,
   Button,
   Input,

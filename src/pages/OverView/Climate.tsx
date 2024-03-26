@@ -1,9 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@components/Card";
 import { FC } from "react";
 
-interface ClimateProps {}
-
-export const Climate: FC<ClimateProps> = ({}) => {
+export const Climate: FC = () => {
   return (
     <div>
       <Card>

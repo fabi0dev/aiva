@@ -10,6 +10,9 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  server: {
+    cors: false,
+  },
   /*  server: {
     host: "192.168.10.101",
     port: 4000,
