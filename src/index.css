@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-default-aiva: #0edde9;
+  --bg-default-aiva: #000;
+} 
+
+.text-aiva{
+  color: var(--color-default-aiva);
+}
+
+.bg-aiva{
+  background-color: var(--bg-default-aiva);
+}
+.bg-color-main{
+  background-color: var(--color-default-aiva);
+}
+
+
+
+body{
+  background-color: var(--bg-default-aiva);
+  margin: 0;
+  padding: 0;
+  transition: all .5s;
+  color: #eee;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+  transition: background-color .5s,color .1s;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, .05);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, .1);
+}
+
+.loader {
+  text-align: center;    
+}
+.loader span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  animation: loader 0.8s infinite alternate;
+}
+.loader span:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+.loader span:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+@keyframes loader {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+}
