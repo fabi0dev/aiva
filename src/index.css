@@ -21,7 +21,7 @@
 
 
 body{
-  background-color: var(--bg-default-aiva);
+  background-color: #000;
   margin: 0;
   padding: 0;
   transition: all .5s;
@@ -30,7 +30,7 @@ body{
 
 * {
   font-family: "Inter", sans-serif;
-  transition: background-color .5s,color .1s;
+  transition: background-color .5s,color .1s, opacity .5s;
 }
 
 /* width */

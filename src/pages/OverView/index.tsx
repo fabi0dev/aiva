@@ -4,6 +4,7 @@ import { FC } from "react";
 import { Notices } from "./Notices";
 import { Climate } from "./Climate";
 import { AivaLogo } from "@components/AivaLogo";
+import { Divider } from "@components/Divider";
 
 export const OverView: FC = () => {
   return (
@@ -11,13 +12,10 @@ export const OverView: FC = () => {
       <SubContent>
         <AivaLogo />
 
-        <div className="grid grid-cols-2 gap-2">
-          <div>
-            <Notices />
-          </div>
-          <div>
-            <Climate />
-          </div>
+        <div className="sm:grid sm:grid-cols-2 gap-2">
+          <Climate />
+          <Divider className="sm:hidden" />
+          <Notices />
         </div>
       </SubContent>
     </Content>

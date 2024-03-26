@@ -11,7 +11,7 @@ export const AivaLogo: FC<AivaLogoProps> = ({}) => {
       className="text-center p-3 hover:opacity-90 cursor-pointer"
     >
       <div className="text-2xl mb-10 w-full">
-        <span className="text-green-400">Aiva</span> Assistant
+        <span className="text-green-400 font-bold">Aiva</span>
       </div>
     </div>
   );

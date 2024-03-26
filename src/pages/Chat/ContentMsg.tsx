@@ -1,3 +1,4 @@
+import { handleMsg } from "@/lib/utils";
 import { selectorChats } from "@/store/reducers/chats";
 import { FC, useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -19,12 +20,9 @@ export const ContentMsg: FC = () => {
   const chatCurrent = chats.filter((chat) => chat.id == id)[0];
 
   const ChatItem: FC<ChatItem> = ({ message }) => {
-    const handleMsg = (content: string) => {
-      return content.replace(new RegExp("(<hrs>.*</hrs>).", "gi"), "");
-    };
     return (
       <div className="mb-7">
-        <div className="font-bold mb-2">
+        <div className="font-bold mb-2 text-[15px]">
           {message.role == "assistant" ? "Aiva" : "Você"}
         </div>
         <div className="leading-7">

@@ -66,3 +66,7 @@ export const randomHash = (limit = 5): string => {
 
   return randomWord;
 };
+
+export const handleMsg = (content: string) => {
+  return content.replace(new RegExp("(<hrs>.*</hrs>).", "gi"), "");
+};
