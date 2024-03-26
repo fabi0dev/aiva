@@ -1,10 +1,3 @@
-interface News {
-  title: string;
-  link: string;
-  image?: string;
-  summary?: string;
-}
-
 export async function fetchG1Local() {
   try {
     const response = await fetch("https://g1.globo.com/to/tocantins/");
