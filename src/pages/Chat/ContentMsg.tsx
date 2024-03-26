@@ -1,13 +1,6 @@
-import { chatCompletions, chatInitial } from "@/services/chat";
-import {
-  Messages,
-  selectorChats,
-  setCurrentChat,
-  setLoadingChat,
-  setMessageInChatCurrent,
-} from "@/store/reducers/chats";
-import { FC, useCallback, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { selectorChats } from "@/store/reducers/chats";
+import { FC, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 interface ChatItem {

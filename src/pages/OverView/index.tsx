@@ -1,8 +1,6 @@
 import { Content } from "@components/Content";
 import { SubContent } from "@components/SubContent";
 import { FC } from "react";
-import { cn } from "@/lib/utils";
-import { Card } from "@components/Card";
 import { Notices } from "./Notices";
 import { Climate } from "./Climate";
 import { AivaLogo } from "@components/AivaLogo";

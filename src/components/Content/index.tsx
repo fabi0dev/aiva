@@ -1,6 +1,6 @@
 import { FC, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { selectorApiKeyOpenAI } from "@/store/reducers/apiKeyOpenAI";
 

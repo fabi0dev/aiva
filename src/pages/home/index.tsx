@@ -1,10 +1,11 @@
 import { Content } from "@components/Content";
 import { SubContent } from "@components/SubContent";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { RiHome2Line, RiMic2Fill, RiChat1Fill } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import { AivaLogo } from "@components/AivaLogo";
+import { fetchG1Local } from "@/services/notices";
 
 interface ItemComumProps {
   desc: string;
@@ -14,6 +15,10 @@ interface ItemComumProps {
 export const Home: FC = () => {
   const ItemComum = ({ desc, icon, url }: ItemComumProps) => {
     const navigate = useNavigate();
+
+    useEffect(() => {
+      fetchG1Local();
+    }, []);
 
     return (
       <div
