@@ -8,10 +8,10 @@ export const AivaLogo: FC<AivaLogoProps> = ({}) => {
   return (
     <div
       onClick={() => navigate("/")}
-      className="text-center hover:opacity-90 cursor-pointer"
+      className="text-center p-3 hover:opacity-90 cursor-pointer"
     >
       <div className="text-2xl mb-10 w-full">
-        <span className="text-lime-400">Aiva</span> Assistant
+        <span className="text-green-400">Aiva</span> Assistant
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
-import interfaceUI from "./interfaceUI";
-import statusPc from "./statusPC";
+import apiKeyOpenAI from "./apiKeyOpenAI";
 import notices from "./notices";
-import profile from "./profile";
 import location from "./location";
+import chats from "./chats";
 
-export default { interfaceUI, statusPc, notices, profile, location };
+export default { apiKeyOpenAI, notices, location, chats };

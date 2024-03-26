@@ -5,7 +5,7 @@ interface SpinnerTypingProps {
 }
 
 export const SpinnerTyping: FC<SpinnerTypingProps> = ({
-  className = "bg-color-main",
+  className = "bg-green-400",
 }) => {
   return (
     <div className="loader">

@@ -16,3 +16,53 @@ export const capitalizeFirstLetter = (string: string) => {
     return string;
   }
 };
+
+export const getTime = () => {
+  const currentDate = new Date();
+
+  const hours = currentDate.getHours();
+  const minutes = currentDate.getMinutes();
+
+  const timeInText24Hours = `${hours < 10 ? "0" : ""}${hours}:${
+    minutes < 10 ? "0" : ""
+  }${minutes}`;
+
+  return timeInText24Hours;
+};
+
+export const getFormattedDate = () => {
+  const currentDate = new Date();
+  const day = String(currentDate.getDate()).padStart(2, "0");
+  const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+  const year = currentDate.getFullYear();
+
+  return `${day}/${month}/${year}`;
+};
+
+export const getDayOfWeekName = () => {
+  const today = new Date().getDay();
+
+  const daysOfWeek = [
+    "Domingo",
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado",
+  ];
+  return daysOfWeek[today];
+};
+
+export const randomHash = (limit = 5): string => {
+  let randomWord = "";
+  const characters =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+  for (let i = 0; i < limit; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    randomWord += characters.charAt(randomIndex);
+  }
+
+  return randomWord;
+};

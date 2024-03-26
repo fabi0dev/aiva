@@ -3,11 +3,12 @@ import { cn } from "@/lib/utils";
 
 interface SubContentProps {
   children: React.ReactNode;
+  maxScreen?: boolean;
 }
 
-export const SubContent: FC<SubContentProps> = ({ children }) => {
+export const SubContent: FC<SubContentProps> = ({ children, maxScreen }) => {
   return (
-    <div className={cn("w-[900px] mx-auto p-2")}>
+    <div className={cn("mx-auto ", maxScreen ? "w-full" : "w-[900px]")}>
       <div className="h-full">{children}</div>
     </div>
   );

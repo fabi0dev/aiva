@@ -10,7 +10,7 @@ setAutoFreeze(false);
 const currencyPersistConfig = {
   key: "aiva",
   storage: localforage,
-  safelist: ["interfaceUI", "profile"],
+  safelist: ["apikeyopenai", "profile", "chats"],
 };
 
 const all = combineReducers({

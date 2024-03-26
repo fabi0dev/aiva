@@ -20,7 +20,7 @@ export const Home: FC = () => {
         onClick={() => navigate(url)}
         className="text-center grid grid-rows-2 mt-4 cursor-pointer hover:opacity-80"
       >
-        <div className="p-4 mx-auto justify-center items-center flex bg-slate-600 rounded-full">
+        <div className="p-4 mx-auto justify-center items-center flex border border-zinc-500 rounded-full text-zinc-100">
           {icon}
         </div>
         <div className="mt-2">{desc}</div>
@@ -45,8 +45,8 @@ export const Home: FC = () => {
               />
 
               <div className="text-center grid grid-rows-2 cursor-pointer hover:opacity-80">
-                <div className="p-5 mx-auto justify-center items-center flex bg-lime-700  rounded-full">
-                  <RiMic2Fill className="text-4xl" />
+                <div className="p-5 mx-auto justify-center items-center flex bg-blue-500  rounded-full">
+                  <RiMic2Fill className="text-4xl text-white" />
                 </div>
                 <div className="mt-2">Comando</div>
               </div>
