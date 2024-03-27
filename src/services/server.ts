@@ -24,3 +24,15 @@ export const GetLocation = async () => {
     console.log("error in GetLocation", e);
   }
 };
+
+export const PlayMusicYoutube = async (search: string, openInWeb = true) => {
+  try {
+    const { data } = await server.post(`/playMusicYoutube`, {
+      search,
+      openInWeb,
+    });
+    return data;
+  } catch (e) {
+    console.log("error in GetLocation", e);
+  }
+};

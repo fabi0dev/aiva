@@ -28,6 +28,7 @@ import {
 } from "@/store/reducers/chatCommand";
 import { Input } from "@components/Input";
 import { Button } from "@components/Button";
+import { handleResultChat } from "@/lib/handleResultChat";
 
 export const Command: FC = () => {
   const dispatch = useDispatch();
@@ -85,6 +86,7 @@ export const Command: FC = () => {
   };
 
   const handleCommand = async (text: string) => {
+    setLoading(true);
     const content = `<hrs>${getTime()}, ${getDayOfWeekName()} ${getFormattedDate()}</hrs>. ${text}`;
 
     messages.push({
@@ -93,6 +95,7 @@ export const Command: FC = () => {
     });
 
     const messageAssistant = await chatCommand(messages);
+    messageAssistant.content = await handleResultChat(messageAssistant.content);
     messages.push(messageAssistant);
 
     if (autoPlayAudioText) {
@@ -113,6 +116,8 @@ export const Command: FC = () => {
 
     const text = await audioTranscriptions(blobAudio);
     await handleCommand(text);
+
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -124,7 +129,7 @@ export const Command: FC = () => {
   }, [recognizingVoice]);
 
   useEffect(() => {
-    //dispatch(clearChatCommand());
+    dispatch(clearChatCommand());
   }, []);
 
   return (
@@ -250,14 +255,24 @@ export const Command: FC = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  // handleSubmit(e);
+
+                  const formData = new FormData(e.target as HTMLFormElement); // Obtém os dados do formulário
+                  const formValues = Object.fromEntries(formData.entries());
+
+                  if (formValues.prompt !== "") {
+                    (
+                      document.querySelector(
+                        "#content-prompt"
+                      ) as HTMLFormElement
+                    ).value = "";
+                    handleCommand(formValues.prompt.toString());
+                  }
                 }}
                 className="flex mb-5 gap-3 justify-center"
               >
                 <Input
                   id="content-prompt"
-                  /*  onChange={(e) => setPrompt(e.target.value)}
-                  value={prompt} */
+                  name="prompt"
                   type="text"
                   autoFocus={true}
                   autoComplete="off"

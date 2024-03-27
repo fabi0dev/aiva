@@ -8,7 +8,7 @@ interface ChatCommandProps {
 }
 
 const initialState = {
-  autoPlayAudioText: true,
+  autoPlayAudioText: false,
   enableKeyboard: false,
   messages: [],
 };
