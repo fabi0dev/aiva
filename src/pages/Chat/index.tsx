@@ -136,7 +136,7 @@ export const Chat: FC = () => {
     <Content>
       <SubContent maxScreen={true}>
         <div className={cn(" w-full h-full", "grid sm:grid-cols-[300px,auto]")}>
-          <div className="hidden sm:block  h-full row-span-1 bg-gray-950">
+          <div className="hidden sm:block  h-full row-span-1 bg-slate-950">
             <Chats />
           </div>
           <div className="bg-gray-900 grid grid-rows-[55px_auto_80px]">

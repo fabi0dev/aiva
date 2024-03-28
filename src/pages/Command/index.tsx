@@ -295,7 +295,7 @@ export const Command: FC = () => {
                   onMouseUp={() => setRecognizingVoice(false)}
                   className="bg-gray-800 rounded-full p-5 cursor-pointer hover:opacity-85 z-[1]"
                 >
-                  <RiMic2Fill className="text-2xl text-green-500" />
+                  <RiMic2Fill className="text-5xl text-green-500" />
                 </div>
 
                 {recognizingVoice && (

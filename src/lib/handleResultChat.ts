@@ -1,5 +1,5 @@
-import { PlayMusicYoutube } from "@/services/server";
 import { isValidJSON } from "./utils";
+import { getFirstLink } from "./youtube";
 
 export const handleResultChat = async (content: string) => {
   if (isValidJSON(content)) {
@@ -7,7 +7,7 @@ export const handleResultChat = async (content: string) => {
 
     switch (action?.type) {
       case "music":
-        return await handleMusic(action.name, action.openIn == "web");
+        return await handleMusic(action.name);
     }
 
     return content;
@@ -15,11 +15,16 @@ export const handleResultChat = async (content: string) => {
   return content;
 };
 
-export const handleMusic = async (name: any, openInWeb = true) => {
+export const handleMusic = async (name: any) => {
   try {
-    await PlayMusicYoutube(name, openInWeb);
-    return `Certo, vou tocar ${name}`;
+    const link = await getFirstLink(name);
+
+    if (link) {
+      const { url } = link;
+      window.open(url, "_blank");
+      return `Certo, já encontrei e vou tocar ${name}!`;
+    }
   } catch (e) {
-    return `Não consegui tocar ${name}`;
+    return `Não consegui tocar ${name}!`;
   }
 };

@@ -3,6 +3,9 @@ import { selectorChats } from "@/store/reducers/chats";
 import { FC, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
+import ReactMarkdown from "react-markdown";
 
 interface ChatItem {
   message: {
@@ -26,7 +29,36 @@ export const ContentMsg: FC = () => {
           {message.role == "assistant" ? "Aiva" : "Você"}
         </div>
         <div className="leading-7">
-          {handleMsg(message.content?.toString() as string)}
+          <ReactMarkdown
+            components={{
+              code(props) {
+                const { children, className, ...rest } = props;
+                const match = /language-(\w+)/.exec(className || "");
+                return match ? (
+                  <SyntaxHighlighter
+                    children={String(children).replace(/\n$/, "")}
+                    language={match[1]}
+                    style={xonokai}
+                    wrapLongLines={true}
+                    customStyle={{
+                      fontSize: 14,
+                      marginTop: 10,
+                      backgroundColor: "rgba(0,0,0,.2)",
+                      borderRadius: 10,
+                      lineHeight: 1.5,
+                      border: 0,
+                    }}
+                  />
+                ) : (
+                  <code {...rest} className={className}>
+                    {children}
+                  </code>
+                );
+              },
+            }}
+          >
+            {handleMsg(message.content?.toString() as string)}
+          </ReactMarkdown>
         </div>
       </div>
     );

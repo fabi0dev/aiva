@@ -41,9 +41,10 @@ export const slice = createSlice({
         enableKeyboard: payload,
       };
     },
-    clearChatCommand: () => {
+    clearChatCommand: (state) => {
       return {
-        ...initialState,
+        ...state,
+        messages: [],
       };
     },
   },
