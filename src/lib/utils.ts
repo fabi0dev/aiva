@@ -66,3 +66,16 @@ export const randomHash = (limit = 5): string => {
 
   return randomWord;
 };
+
+export const handleMsg = (content: string) => {
+  return content.replace(new RegExp("(<hrs>.*</hrs>).", "gi"), "");
+};
+
+export const isValidJSON = (text: string) => {
+  try {
+    JSON.parse(text);
+    return true;
+  } catch (error) {
+    return false;
+  }
+};

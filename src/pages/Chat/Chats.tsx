@@ -41,7 +41,9 @@ export const Chats: FC = () => {
         </div>
       </div>
 
-      <div className="text-xs my-4 text-gray-400">Todos</div>
+      {chats.length > 0 && (
+        <div className="text-xs my-4 text-gray-400">Todos</div>
+      )}
 
       <div>
         {chats.map((chat, index) => {
