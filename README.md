@@ -1,9 +1,3 @@
-# Template ReactJs + Vite
+# Aiva Assistant
 
-Template já inclui
-- TypeScript
-- Tailwind CSS
-- Redux Configurado
-- Redux Persist
-- React Icons
-- Router Dom
+Integração com Chat OpenAI.
