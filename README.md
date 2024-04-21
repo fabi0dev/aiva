@@ -9,7 +9,7 @@ Acesse: [aiva-assistant.vercel.app](https://aiva-assistant.vercel.app/)
 
 - **Conversação Natural:** AIVA é capaz de entender e responder a perguntas de forma natural, proporcionando uma experiência amigável e intuitiva para o usuário.
   
-- **Comandos Rápidos:** Além de conversar, AIVA pode executar uma variedade de comandos rápidos para ajudar com tarefas específicas, tanto digitando como por voz, é possível buscar informações entre outros.
+- **Comandos Rápidos:** Além de conversar, AIVA pode executar comandos rápidos para ajudar com tarefas específicas, tanto digitando como por voz, é possível buscar informações, pedir música, entre outros.
   
 - **Integração com OpenAI:** AIVA utiliza a tecnologia avançada da OpenAI para garantir respostas precisas e atualizadas.
 
